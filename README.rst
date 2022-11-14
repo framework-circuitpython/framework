@@ -32,13 +32,13 @@ Usage Example
 
 There are four steps to making a framework project:
 
-1. Organize your project 
+1. `Organize your project <https://github.com/framework-circuitpython/framework/blob/main/docs/project_organization.rst>`_ 
 
-2. Make a configurations file and connect the peripherals to your board
+2. `Make a configurations file <https://github.com/framework-circuitpython/framework/blob/main/docs/configurations.rst>`_ and connect the peripherals to your board
 
-3. Write an app
+3. `Write an app <https://github.com/framework-circuitpython/framework/blob/main/docs/your_app.rst>`_
 
-4. Load and launch your app
+4. `Load and launch <https://github.com/framework-circuitpython/framework/blob/main/docs/load_and_launch.rst>`_ your app
 
 Hello World! Blink
 ==================
