@@ -31,13 +31,13 @@ Usage Example
 
 There are four steps to making a framework project:
 
-# Organize your project
+1. Organize your project
 
-# Make a configurations file and connect the peripherals to your board
+2. Make a configurations file and connect the peripherals to your board
 
-# Write an app
+3. Write an app
 
-# Load and launch your app
+4. Load and launch your app
 
 Hello World! Blink
 ==================
