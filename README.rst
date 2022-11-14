@@ -66,13 +66,12 @@ Configure
 
 The next thing we need to do is make a configurations file. This contains information about our peripherals including the peripheral alias and peripheral type. Using your favorite Python (or plain text) editor, copy and paste the following configurations and save the file as 'CIRCUITPY/blink/conf.py':
 
-::
-
 .. code-block:: python
 
     conf = {
         'board_led':
             {'driver': 'DigitalOut',
+             'invert': False,
              'pin':
                  {'led': 'LED'}
         },
