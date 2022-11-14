@@ -6,7 +6,7 @@ Cooperative Multitasking for CircuitPython
 `framework` for CircuitPython is a project framework for microcontrollers running CircuitPython using cooperative multitasking. It helps keep projects organized.
 It makes peripherals easy and reusable.
 
-Because framework runs on top of CircuitPython >= 7.1.0, make sure you are familiar with and set up for CircuitPython before starting. framework has been developed for and tested on RP2040, SAMD51, and SAMD21 based microcontroller boards. It has not been tested on ARM or x86/64 devices.
+Because framework runs on top of CircuitPython >= 7.1.0, make sure you are familiar with and set up for CircuitPython before starting. framework has been developed for and tested on RP2040, SAMD51, SAMD21, and ESP32-S2 based microcontroller boards. It has not been tested on ARM or x86/64 devices.
 
 
 Installation
@@ -32,7 +32,7 @@ Usage Example
 
 There are four steps to making a framework project:
 
-1. Organize your project
+1. Organize your project 
 
 2. Make a configurations file and connect the peripherals to your board
 
