@@ -68,6 +68,7 @@ The next thing we need to do is make a configurations file. This contains inform
 
 .. code-block:: python
 
+    # blink/conf.py
     conf = {
         'board_led':
             {'driver': 'DigitalOut',
@@ -89,13 +90,26 @@ Your Code
 
 The magic of framework is that it lets us import our peripherals into our app in a Pythonic way. It uses the peripheral aliases we used in our configurations file. framework will also handle the details of making our app run "forever". Using your favorite Python (or plain text) editor, copy and paste the following code and save the file as 'CIRCUITPY/blink/blink.py':
 
-:TODO: blink.py
+.. code-block:: python
+    
+    # blink/blink.py
+    from framework import board_led, clock
+
+    def invert(v):
+        board_led.value = not board_led.value
+
+    clock.on_event = invert
 
 Load and Launch
 ---------------
 
 Another magic thing that framework does is load our app and peripherals in a very simple way. Given our app name, it looks for our project folder, finds our configurations file and loads the peripherals, loads our app, and runs the peripherals and app. This is accomplished using AppLoader. Using your favorite Python (or plain text) editor, copy and paste the following code and save the file as 'CIRCUITPY/code.py':
 
-:TODO: code.py
+.. code-block:: python
+
+    # code.py
+    from framework import run
+
+    run('blink')
 
 :note: If you are using the default CircuitPython settings that resets when there is a change on your CIRCUITPY drive, you should see a blinking LED on your board. If not, you may need to manually reset your board following the instructions specific to your board to do so.
