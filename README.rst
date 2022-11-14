@@ -3,7 +3,7 @@ Introduction
 
 Cooperative Multitasking for CircuitPython
 
-framework for CircuitPython is an app framework for microcontrollers running CircuitPython using cooperative multitasking. It helps keep projects organized. It loads apps.
+`framework` for CircuitPython is a project framework for microcontrollers running CircuitPython using cooperative multitasking. It helps keep projects organized.
 It makes peripherals easy and reusable.
 
 Because framework runs on top of CircuitPython >= 7.1.0, make sure you are familiar with and set up for CircuitPython before starting. framework has been developed for and tested on RP2040, SAMD51, and SAMD21 based microcontroller boards. It has not been tested on ARM or x86/64 devices.
@@ -13,7 +13,8 @@ Installation
 ============
 
 This guide assumes you have followed the excellent Welcome to CircuitPython tutorial and have a CIRCUITPY drive accessible on your computer.
-Clone this repository or download this repository as a zip file and unzip it in a convenient location. Copy the 'framework.mpy' file from the 'framework' folder of this repo to the 'lib' folder on your CIRCUITPY drive. You will also need to copy the 'asyncio' library and 'adafruit_ticks.mpy' module from the Adafruit libraries bundle to the 'lib' folder on your CIRCUITPY drive.
+
+Clone or download the framework bundle repository as a zip file and unzip it in a convenient location. Copy the 'framework.mpy' file from the framework bundle to the 'lib' folder on your CIRCUITPY drive. You will also need to copy the 'asyncio' library and 'adafruit_ticks.mpy' module from the Adafruit libraries bundle to the 'lib' folder on your CIRCUITPY drive.
 
 Check to see that your CIRCUITPY drive looks like the following:
 
@@ -63,13 +64,26 @@ We will also be using 'frk_freerun.mpy' and 'frk_digitalout.mpy' for this projec
 Configure
 ---------
 
-The next thing we need to do is make a configurations file. This contains information about our peripherals including the peripheral alias and peripheral type. Using your favorite JSON (or plain text) editor, copy and paste the following configurations and save the file as 'CIRCUITPY/blink/blink.json':
+The next thing we need to do is make a configurations file. This contains information about our peripherals including the peripheral alias and peripheral type. Using your favorite Python (or plain text) editor, copy and paste the following configurations and save the file as 'CIRCUITPY/blink/conf.py':
 
 ::
 
-:TODO: conf.py UPDATE THE ABOVE
+.. code-block:: python
 
-:note: In this example, there isn't any external hardware to connect if you have an onboard LED. However, if your board does not have an onboard LED, connect an LED to a digital pin on your board and change "LED" to the name of the pin you have connected to (eg. "GP0", "D1", ...)
+    conf = {
+        'board_led':
+            {'driver': 'DigitalOut',
+             'pin':
+                 {'led': 'LED'}
+        },
+        'clock':
+            {'driver': 'FreeRun',
+             't_on': 0.1,
+             't_off': 0.9
+        }
+    }
+
+:note: In this example, there isn't any external hardware to connect if you have an onboard LED. However, if your board does not have an onboard LED, connect an LED to a digital pin on your board and change "LED" to the name of the pin you have connected to (eg. "GP0", "D1", ...). You might also want to change the `invert` setting to `True` depending on your board.
 
 Your Code
 ---------
