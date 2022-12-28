@@ -10,6 +10,8 @@ An app is a Python (.py or .mpy) file that is in a project folder, has the same 
 
 * asyncio-like 'run'
 
+* Object Oriented
+
 * Callbacks
 
 setup/loop

@@ -21,8 +21,6 @@ Optionally, a peripheral configuration may contain:
 
 For example:
 
-::
-
 .. code-block:: python
 
     conf = {
